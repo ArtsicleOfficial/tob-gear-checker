@@ -1,5 +1,4 @@
-# Example
-ToB Gear Checker
+# ToB Gear Checker
 
 So you don't go into maiden without freezes. Or run out of mud runes during a raid. Or anything else.
 
