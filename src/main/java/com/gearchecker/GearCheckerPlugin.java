@@ -96,7 +96,7 @@ public class GearCheckerPlugin extends Plugin
 			charges.blowpipeScales = numbers.get(hasDarts ? 1 : 0);
 			charges.blowpipeDartType = words[1];
 		}
-		if(message.contains("Scythe of vitur") && config.scythe()) {
+		if(message.toLowerCase().contains("scythe of vitur") && config.scythe()) {
 			if(numbers.size() == 0) {
 				//NO charges, I assume (not sure what message it gives)
 				charges.scytheCharges = 0;
@@ -109,7 +109,7 @@ public class GearCheckerPlugin extends Plugin
 		}
 
 		//Not sure if this only applies to trident, but it'll have to do.
-		if(message.contains("Your weapon has") && message.contains("charges.") && config.trident()) {
+		if((message.toLowerCase().contains("your weapon has") || message.toLowerCase().contains("sanguinesti staff")) && message.contains("charges.") && config.trident()) {
 			charges.tridentCharges = numbers.get(0);
 		}
 	}
@@ -216,7 +216,6 @@ public class GearCheckerPlugin extends Plugin
 		} else {
 			output = runeIssues + "\n\n" + chargeIssues;
 		}
-		log.info(runeIssues);
 		if(runeIssues.length() + chargeIssues.length() == 0) {
 			gearCheckerOverlayPanel.SetProblems(true,"");
 		} else {
