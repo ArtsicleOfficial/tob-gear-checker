@@ -2,7 +2,6 @@ package com.gearchecker.gear;
 
 import com.gearchecker.GearCheckerConfig;
 import com.gearchecker.RuneSets;
-import sun.text.resources.cldr.ext.FormatData_sr_Cyrl_BA;
 
 public class HaveCharges {
     public String blowpipeDartType = "";
@@ -28,43 +27,43 @@ public class HaveCharges {
     }
 
     public String getReadableIssues(GearCheckerConfig config) {
-        String output = "";
+        StringBuilder output = new StringBuilder();
         if(config.blowpipe()) {
             if(blowpipeDartType.equals("") || blowpipeDarts == -1 || blowpipeScales == -1) {
-                output += "Please check charges on your blowpipe\n";
+                output.append("Please check charges on your blowpipe\n");
             } else {
                 if (!blowpipeDartType.equals(config.blowpipeDartType().toString()) && blowpipeDarts > 0) {
-                    output += blowpipeDartType + " instead of " + config.blowpipeDartType() + " blowpipe darts\n";
+                    output.append(blowpipeDartType).append(" instead of ").append(config.blowpipeDartType()).append(" blowpipe darts\n");
                 }
                 if (blowpipeDarts < config.blowpipeDartAmounts()) {
-                    output += blowpipeDarts + "/" + config.blowpipeDartAmounts() + " blowpipe darts\n";
+                    output.append(blowpipeDarts).append("/").append(config.blowpipeDartAmounts()).append(" blowpipe darts\n");
                 }
                 if (blowpipeScales < config.blowpipeScaleAmounts()) {
-                    output += blowpipeScales + "/" + config.blowpipeScaleAmounts() + " blowpipe scales\n";
+                    output.append(blowpipeScales).append("/").append(config.blowpipeScaleAmounts()).append(" blowpipe scales\n");
                 }
             }
         }
         if(config.serpentine()) {
             if(serpentineScales == -1) {
-                output += "Please check charges on your serpentine\n";
+                output.append("Please check charges on your serpentine\n");
             } else if (serpentineScales < config.serpentineAmount()) {
-                output += serpentineScales + "/" + config.serpentineAmount() + " serpentine scales\n";
+                output.append(serpentineScales).append("/").append(config.serpentineAmount()).append(" serpentine scales\n");
             }
         }
         if(config.trident()) {
             if(tridentCharges == -1) {
-                output += "Please check charges on your trident\n";
+                output.append("Please check charges on your trident\n");
             } else if(tridentCharges < config.tridentAmount()) {
-                output += tridentCharges + "/" + config.tridentAmount() + " trident charges\n";
+                output.append(tridentCharges).append("/").append(config.tridentAmount()).append(" trident charges\n");
             }
         }
         if(config.scythe()) {
             if(scytheCharges == -1) {
-                output += "Please check charges on your scythe\n";
+                output.append("Please check charges on your scythe\n");
             } else if(scytheCharges < config.scytheAmount()) {
-                output += scytheCharges + "/" + config.scytheAmount() + " scythe charges\n";
+                output.append(scytheCharges).append("/").append(config.scytheAmount()).append(" scythe charges\n");
             }
         }
-        return output;
+        return output.toString();
     }
 }

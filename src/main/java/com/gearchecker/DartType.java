@@ -1,10 +1,11 @@
 package com.gearchecker;
 
 public enum DartType {
-    DRAGON("Dragon"),
-    AMETHYST("Amethyst"),
+    MITHRIL("Mithril"),
     ADAMANT("Adamant"),
-    MITHRIL("Mithril");
+    RUNE("Rune"),
+    AMETHYST("Amethyst"),
+    DRAGON("Dragon");
 
     private final String name;
 

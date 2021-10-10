@@ -14,30 +14,20 @@ public interface GearCheckerConfig extends Config
 			position = 0
 	)
 	String spellSection = "spell";
+
 	@ConfigSection(
 			name = "Blowpipe Checks",
 			description = "Checks for the blowpipe's scales and darts",
 			position = 1
 	)
 	String blowpipeSection = "blowpipe";
+
 	@ConfigSection(
 			name = "Charges",
 			description = "Weapon charge checks",
 			position = 2
 	)
 	String chargeSection = "charges";
-
-	/*
-	Now replaced with targetRuneSet below
-	@ConfigItem(
-			keyName = "targetSpellbook",
-			name = "Target Spellbook",
-			description = "The spellbook to aim for",
-			section = spellSection
-	)
-	default Spellbook targetSpellbook() {
-		return Spellbook.NONE;
-	}*/
 
 	@ConfigItem(
 			keyName = "targetRuneSet",
@@ -48,6 +38,7 @@ public interface GearCheckerConfig extends Config
 	default RuneSets targetRuneSet() {
 		return RuneSets.NONE;
 	}
+
 	@ConfigItem(
 			keyName = "runeAmounts",
 			name = "Amount of Runes (Each)",
@@ -57,8 +48,6 @@ public interface GearCheckerConfig extends Config
 	default int runeAmounts() {
 		return 2000;
 	}
-
-
 
 	@ConfigItem(
 			keyName = "blowpipe",
@@ -110,6 +99,7 @@ public interface GearCheckerConfig extends Config
 	default boolean serpentine() {
 		return false;
 	}
+
 	@ConfigItem(
 			keyName = "serpScales",
 			name = "Serp Scales",
@@ -129,6 +119,7 @@ public interface GearCheckerConfig extends Config
 	default boolean trident() {
 		return false;
 	}
+
 	@ConfigItem(
 			keyName = "tridentCharges",
 			name = "Trident/Sang Charges",
@@ -148,6 +139,7 @@ public interface GearCheckerConfig extends Config
 	default boolean scythe() {
 		return false;
 	}
+
 	@ConfigItem(
 			keyName = "scytheCharges",
 			name = "Scythe Charges",

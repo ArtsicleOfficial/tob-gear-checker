@@ -1,5 +1,10 @@
 package com.gearchecker;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
+
+@AllArgsConstructor
 public enum Spellbook {
     NONE("None",-1),
     STANDARD("Standard",0),
@@ -8,9 +13,8 @@ public enum Spellbook {
     ARCEUUS("Arceuus",3);
 
     private final String name;
+    @Getter(AccessLevel.PUBLIC)
     private final int id;
-
-    public int getID() { return this.id; }
 
     public static Spellbook getSpellbookByID(int id) {
         for(int i = 0; i < Spellbook.values().length; i++) {
@@ -23,10 +27,6 @@ public enum Spellbook {
 
     public String toString() {
         return this.name;
-    }
-
-    Spellbook(String name, int id) {
-        this.name = name; this.id = id;
     }
 
 }

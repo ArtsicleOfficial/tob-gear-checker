@@ -17,7 +17,7 @@ public class HaveRunes {
     public String getReadableIssues(GearCheckerConfig config) {
         StringBuilder output = new StringBuilder();
         if(config.targetRuneSet() != RuneSets.NONE) {
-            if (spellbook.getID() != config.targetRuneSet().getSpellbook().getID()) {
+            if (spellbook.getId() != config.targetRuneSet().getSpellbook().getId()) {
                 output.append("Wrong spellbook (Need ").append(config.targetRuneSet().getSpellbook().toString()).append(")\n");
             }
             if(!runePouch) {

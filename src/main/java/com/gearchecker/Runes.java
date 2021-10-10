@@ -51,9 +51,6 @@ public enum Runes {
     int runePouchID;
     int itemID;
 
-    public int getItemID() {
-        return itemID;
-    }
     public int getRunePouchID() {
         return runePouchID;
     }

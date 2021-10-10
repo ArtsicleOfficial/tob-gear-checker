@@ -85,7 +85,7 @@ public class GearCheckerPlugin extends Plugin
 			}
  		}
 
-		if(message.contains("Darts") && message.contains("Scales") && config.blowpipe()) {
+		if(config.blowpipe() && message.toLowerCase().contains("darts") && message.toLowerCase().contains("scales")) {
 			boolean hasDarts = true;
 			if(words[1].equalsIgnoreCase("none")) {
 				hasDarts = false;
@@ -95,21 +95,16 @@ public class GearCheckerPlugin extends Plugin
 			}
 			charges.blowpipeScales = numbers.get(hasDarts ? 1 : 0);
 			charges.blowpipeDartType = words[1];
-		}
-		if(message.toLowerCase().contains("scythe of vitur") && config.scythe()) {
+		} else if(config.scythe() && message.toLowerCase().contains("scythe of vitur")) {
 			if(numbers.size() == 0) {
 				//NO charges, I assume (not sure what message it gives)
 				charges.scytheCharges = 0;
 			} else {
 				charges.scytheCharges = numbers.get(0);
 			}
-		}
-		if(message.contains("Scales:") && !message.contains("Darts") && config.serpentine()) {
+		} else if(config.serpentine() && message.toLowerCase().contains("scales:") && !message.toLowerCase().contains("darts")) {
 			charges.serpentineScales = numbers.get(0);
-		}
-
-		//Not sure if this only applies to trident, but it'll have to do.
-		if((message.toLowerCase().contains("your weapon has") || message.toLowerCase().contains("sanguinesti staff")) && message.contains("charges") && config.trident()) {
+		} else if (config.trident() && (message.toLowerCase().contains("your weapon has") || message.toLowerCase().contains("sanguinesti staff")) && message.contains("charges")) {
 			charges.tridentCharges = numbers.get(0);
 		}
 	}
@@ -121,11 +116,6 @@ public class GearCheckerPlugin extends Plugin
 			overlayManager.remove(gearCheckerOverlayPanel);
 			gearCheckerOverlayPanel.setVisible(false);
 		}
-	}
-
-	@Subscribe
-	public void onGameStateChanged(GameStateChanged gameStateChanged)
-	{
 	}
 
 	@Subscribe
