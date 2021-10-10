@@ -109,7 +109,7 @@ public class GearCheckerPlugin extends Plugin
 		}
 
 		//Not sure if this only applies to trident, but it'll have to do.
-		if((message.toLowerCase().contains("your weapon has") || message.toLowerCase().contains("sanguinesti staff")) && message.contains("charges.") && config.trident()) {
+		if((message.toLowerCase().contains("your weapon has") || message.toLowerCase().contains("sanguinesti staff")) && message.contains("charges") && config.trident()) {
 			charges.tridentCharges = numbers.get(0);
 		}
 	}
