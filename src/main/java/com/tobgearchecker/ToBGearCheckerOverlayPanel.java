@@ -1,28 +1,22 @@
-package com.gearchecker;
+package com.tobgearchecker;
 
-import com.gearchecker.gear.HaveCharges;
-import com.gearchecker.gear.HaveRunes;
 import net.runelite.client.ui.overlay.OverlayPanel;
 import net.runelite.client.ui.overlay.OverlayPosition;
 import net.runelite.client.ui.overlay.OverlayPriority;
 import net.runelite.client.ui.overlay.components.LineComponent;
 import net.runelite.client.ui.overlay.components.TitleComponent;
-import net.runelite.client.ui.overlay.infobox.InfoBox;
-import net.runelite.client.ui.overlay.tooltip.Tooltip;
 
 import javax.inject.Inject;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 
-public class GearCheckerOverlayPanel extends OverlayPanel {
+public class ToBGearCheckerOverlayPanel extends OverlayPanel {
     private boolean visible = false;
 
     private boolean everythingGood;
     private String problems;
 
     @Inject
-    public GearCheckerOverlayPanel(GearCheckerPlugin plugin, boolean everythingGood, String problems) {
+    public ToBGearCheckerOverlayPanel(ToBGearCheckerPlugin plugin, boolean everythingGood, String problems) {
         super(plugin);
 
         this.everythingGood = everythingGood;

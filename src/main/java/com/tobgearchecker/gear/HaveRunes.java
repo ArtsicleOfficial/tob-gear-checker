@@ -1,9 +1,9 @@
-package com.gearchecker.gear;
+package com.tobgearchecker.gear;
 
-import com.gearchecker.GearCheckerConfig;
-import com.gearchecker.RuneSets;
-import com.gearchecker.Runes;
-import com.gearchecker.Spellbook;
+import com.tobgearchecker.ToBGearCheckerConfig;
+import com.tobgearchecker.RuneSets;
+import com.tobgearchecker.Runes;
+import com.tobgearchecker.Spellbook;
 
 public class HaveRunes {
     public boolean runePouch = false;
@@ -14,7 +14,7 @@ public class HaveRunes {
 
     }
 
-    public String getReadableIssues(GearCheckerConfig config) {
+    public String getReadableIssues(ToBGearCheckerConfig config) {
         StringBuilder output = new StringBuilder();
         if(config.targetRuneSet() != RuneSets.NONE) {
             if (spellbook.getId() != config.targetRuneSet().getSpellbook().getId()) {

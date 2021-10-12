@@ -1,7 +1,7 @@
-package com.gearchecker.gear;
+package com.tobgearchecker.gear;
 
-import com.gearchecker.GearCheckerConfig;
-import com.gearchecker.RuneSets;
+import com.tobgearchecker.ToBGearCheckerConfig;
+import com.tobgearchecker.RuneSets;
 
 public class HaveCharges {
     public String blowpipeDartType = "";
@@ -26,7 +26,7 @@ public class HaveCharges {
         this.tridentCharges = tridentCharges;
     }
 
-    public String getReadableIssues(GearCheckerConfig config) {
+    public String getReadableIssues(ToBGearCheckerConfig config) {
         StringBuilder output = new StringBuilder();
         if(config.blowpipe()) {
             if(blowpipeDartType.equals("") || blowpipeDarts == -1 || blowpipeScales == -1) {

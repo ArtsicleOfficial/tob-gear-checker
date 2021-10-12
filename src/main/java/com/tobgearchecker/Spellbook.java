@@ -1,4 +1,4 @@
-package com.gearchecker;
+package com.tobgearchecker;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

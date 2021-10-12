@@ -1,5 +1,10 @@
-package com.gearchecker;
+package com.tobgearchecker;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@AllArgsConstructor
 public enum RuneSets {
     NONE("None",new Runes[]{},Spellbook.NONE),
     FREEZESWATER("No-Kodai Freezes",new Runes[]{Runes.WATER,Runes.SOUL,Runes.BLOOD,Runes.DEATH},Spellbook.ANCIENT),
@@ -9,19 +14,12 @@ public enum RuneSets {
 
 
     private final String name;
+    @Getter(AccessLevel.PUBLIC)
     private final Runes[] runes;
+    @Getter(AccessLevel.PUBLIC)
     private final Spellbook spellbook;
-
-    public Spellbook getSpellbook() {
-        return spellbook;
-    }
-
-    public Runes[] getRunes() { return runes; }
 
     public String toString() {
         return name;
-    }
-    RuneSets(String name,Runes[] runes,Spellbook spellbook) {
-        this.name = name; this.runes = runes; this.spellbook = spellbook;
     }
 }

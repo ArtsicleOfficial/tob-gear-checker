@@ -1,4 +1,4 @@
-package com.gearchecker;
+package com.tobgearchecker;
 
 public enum DartType {
     MITHRIL("Mithril"),

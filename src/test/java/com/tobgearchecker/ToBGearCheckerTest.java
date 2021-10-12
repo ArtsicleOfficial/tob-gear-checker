@@ -1,13 +1,13 @@
-package com.gearchecker;
+package com.tobgearchecker;
 
 import net.runelite.client.RuneLite;
 import net.runelite.client.externalplugins.ExternalPluginManager;
 
-public class GearCheckerTest
+public class ToBGearCheckerTest
 {
 	public static void main(String[] args) throws Exception
 	{
-		ExternalPluginManager.loadBuiltin(GearCheckerPlugin.class);
+		ExternalPluginManager.loadBuiltin(ToBGearCheckerPlugin.class);
 		RuneLite.main(args);
 	}
 }

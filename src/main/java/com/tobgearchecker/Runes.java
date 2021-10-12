@@ -1,6 +1,4 @@
-package com.gearchecker;
-
-import net.runelite.api.ItemID;
+package com.tobgearchecker;
 
 import static net.runelite.api.ItemID.AIR_RUNE;
 import static net.runelite.api.ItemID.ASTRAL_RUNE;

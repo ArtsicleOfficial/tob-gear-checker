@@ -1,12 +1,12 @@
-package com.gearchecker;
+package com.tobgearchecker;
 
 import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
 import net.runelite.client.config.ConfigSection;
 
-@ConfigGroup("gearchecker")
-public interface GearCheckerConfig extends Config
+@ConfigGroup("tobgearchecker")
+public interface ToBGearCheckerConfig extends Config
 {
 	@ConfigSection(
 			name = "Spell Checks",

@@ -1,7 +1,7 @@
-package com.gearchecker;
+package com.tobgearchecker;
 
-import com.gearchecker.gear.HaveCharges;
-import com.gearchecker.gear.HaveRunes;
+import com.tobgearchecker.gear.HaveCharges;
+import com.tobgearchecker.gear.HaveRunes;
 import com.google.inject.Provides;
 import javax.inject.Inject;
 
@@ -10,29 +10,26 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.*;
 import net.runelite.api.events.ChatMessage;
-import net.runelite.api.events.GameStateChanged;
 import net.runelite.api.events.GameTick;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
-import net.runelite.client.game.ItemManager;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
 import net.runelite.client.ui.NavigationButton;
 import net.runelite.client.ui.overlay.OverlayManager;
-import net.runelite.client.ui.overlay.infobox.InfoBoxManager;
 import net.runelite.client.util.Text;
-import org.apache.commons.lang3.ObjectUtils;
 
-import java.awt.image.BufferedImage;
 import java.util.*;
 
 @Slf4j
 @PluginDescriptor(
-	name = "ToB Gear Checker"
+	name = "ToB Gear Checker",
+	description = "A plugin that checks your spellbook, runes, and charges.",
+	tags = {"tob","gear","rune","spellbook","spells","charges"}
 )
-public class GearCheckerPlugin extends Plugin
+public class ToBGearCheckerPlugin extends Plugin
 {
-	private GearCheckerOverlayPanel gearCheckerOverlayPanel = null;
+	private ToBGearCheckerOverlayPanel gearCheckerOverlayPanel = null;
 	public boolean leftVersinhaza = true;
 
 	public HaveCharges charges = new HaveCharges();
@@ -45,7 +42,7 @@ public class GearCheckerPlugin extends Plugin
 	private Client client;
 
 	@Inject
-	private GearCheckerConfig config;
+	private ToBGearCheckerConfig config;
 
 	@Getter(AccessLevel.PACKAGE)
 	private NavigationButton navButton;
@@ -54,7 +51,7 @@ public class GearCheckerPlugin extends Plugin
 	protected void startUp()
 	{
 
-		gearCheckerOverlayPanel = new GearCheckerOverlayPanel(this, true, ""
+		gearCheckerOverlayPanel = new ToBGearCheckerOverlayPanel(this, true, ""
 		);
 
 	}
@@ -171,9 +168,9 @@ public class GearCheckerPlugin extends Plugin
 
 
 	@Provides
-	GearCheckerConfig provideConfig(ConfigManager configManager)
+	ToBGearCheckerConfig provideConfig(ConfigManager configManager)
 	{
-		return configManager.getConfig(GearCheckerConfig.class);
+		return configManager.getConfig(ToBGearCheckerConfig.class);
 	}
 
 	public boolean isInVersinhaza() {
